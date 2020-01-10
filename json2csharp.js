@@ -71,9 +71,9 @@ var json2csharp = function() {
       var indentation = this.getIndentation();
       var rendered = "";
       if (key != undefined) {
-        rendered =  `${indentation}[Newtonsoft.Json.JsonProperty("${key}")]\n`
+        rendered = `${indentation}[Newtonsoft.Json.JsonProperty("${key}")]\n`
       }
-      rendered += `${indentation}public ${type} ${this.getPropertyName(key)} { get; set; }`
+      rendered +=  `${indentation}public ${type} ${this.getPropertyName(key)} { get; set; }`
 
       return rendered;
     },
@@ -93,7 +93,7 @@ var json2csharp = function() {
     },
     getDeserializeFunction: function(type) {
       var indentation = this.getIndentation();
-      var rendered = `${indentation}public static ${type} Deserialize(string json)\n`
+      var rendered =  `${indentation}public static ${type} Deserialize(string json)\n`
       rendered +=     `${indentation}{\n`
       rendered +=     `${indentation}${indentation}return JsonConvert.DeserializeObject<${type}>(json);`
       rendered +=     `\n${indentation}}`
