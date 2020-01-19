@@ -14,7 +14,7 @@ var json2csharp = function() {
       var outer = this;
       var children = [];
 
-      if (object === null) {
+      if (object == null || object == undefined) {
         return "object";
       } else if (typeof(object) == 'string') {
         return "string";
